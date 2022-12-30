@@ -1,9 +1,26 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './page/Home.js'
+import About from './page/About.js';
+import Contact from './page/Contact.js';
+import Nopage from './page/Nopage.js'
+import Header from './component/Header.js';
+import Footer from './component/Footer.js';
 
 const App = () => {
   return (
     <div>
-      <h5>App</h5>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path="*" element={<Nopage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   )
 }
