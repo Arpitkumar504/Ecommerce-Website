@@ -1,5 +1,7 @@
 import React from 'react'
 import Hero from '../component/Hero'
+import Process from '../component/Process';
+import Trusted from '../component/Trusted';
 
 const Home = () => {
     const data = {
@@ -7,8 +9,10 @@ const Home = () => {
         image: "./image/image1.png",
     };
     return (
-        <div className='container'>
+        <div>
             <Hero {...data} />
+            <Trusted/>
+            <Process/>
         </div>
     )
 }

@@ -308,7 +308,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 50px 0;
+  padding: 60px 0;
 }
 
 .hero div {
@@ -451,4 +451,88 @@ body {
   .contacts .forms {
     width: 300px;
   }
+}
+
+/* Trusted section */
+.trusted {
+  margin: 50px 0;
+  padding: 40px 0;
+  background-color: #f3f3f3;
+}
+
+.trusted h5 {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.trusted .company {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.trusted .company div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trusted .company div img {
+  width: 80px;
+  height: 80px;
+}
+
+@media(max-width:576px) {
+  .trusted img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .trusted {
+    margin: 0;
+  }
+
+  .trusted h5 {
+    font-size: 30px !important;
+  }
+}
+
+.process {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.process .box {
+  width: 300px;
+  height: 200px;
+  background-color: #f3f3f3;
+}
+
+.process .boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: #f3f3f3;
+}
+
+.process .boxes h5 {
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.process .boxes div {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
