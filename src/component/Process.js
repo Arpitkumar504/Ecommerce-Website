@@ -8,7 +8,7 @@ const Process = () => {
     return (
         <div className='process container'>
             <div className='box'>
-                <div class="iconbox">
+                <div className="iconbox">
                     <TbTruckDelivery className='icons' />
                 </div>
                 <div className="content">
@@ -17,7 +17,7 @@ const Process = () => {
             </div>
             <div className='processmiddle'>
                 <div className='boxes'>
-                    <div class="iconbox">
+                    <div className="iconbox">
                         <MdOutlineSecurity className='icons' />
                     </div>
                     <div className="content">
@@ -25,7 +25,7 @@ const Process = () => {
                     </div>
                 </div>
                 <div className='boxes'>
-                    <div class="iconbox">
+                    <div className="iconbox">
                         <FaMoneyBillAlt className='icons' />
                     </div>
                     <div className="content">
@@ -34,7 +34,7 @@ const Process = () => {
                 </div>
             </div>
             <div className='box'>
-                <div class="iconbox">
+                <div className="iconbox">
                     <RiSecurePaymentFill className='icons' />
                 </div>
                 <div className="content">

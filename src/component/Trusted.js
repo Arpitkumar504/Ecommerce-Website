@@ -3,7 +3,7 @@ import React from 'react'
 const Trusted = () => {
     return (
         <div className='trusted'>
-            <h5>Our Client</h5>
+            <h5>Our Clients</h5>
             <div className="company container">
                 <div>
                     <img src="./image/adobe.png" alt="#" />
