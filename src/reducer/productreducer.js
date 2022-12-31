@@ -10,6 +10,12 @@ const reducer = (state, action) => {
                 featureproducts: feature,
             }
         }
+        case "setsingleproduct": {
+            return {
+                ...state,
+                singleproduct: action.payload,
+            }
+        }
         default:
             return state;
     }

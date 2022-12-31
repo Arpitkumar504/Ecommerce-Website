@@ -8,6 +8,7 @@ const intialstate = {
     products: [],
     featureproducts: [],
     isLoading: false,
+    singleproduct: {},
 }
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, intialstate);
@@ -24,12 +25,24 @@ const AppProvider = ({ children }) => {
         }
     }
 
+    const getsingleproducts = async (url) => {
+        try {
+            const datas = await axios.get(url);
+            dispatch({
+                type: "setsingleproduct",
+                payload: datas.data,
+            })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     useEffect(() => {
         getproducts(api);
     }, [])
 
     return (
-        <Appcontext.Provider value={{ ...state }}>
+        <Appcontext.Provider value={{ ...state, getsingleproducts }}>
             {children}
         </Appcontext.Provider>
     )
@@ -38,4 +51,4 @@ const AppProvider = ({ children }) => {
 const UseGlobalContext = () => {
     return useContext(Appcontext);
 }
-export { AppProvider, Appcontext, UseGlobalContext }
+export { AppProvider, Appcontext, UseGlobalContext, api }

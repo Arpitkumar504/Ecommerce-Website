@@ -7,6 +7,7 @@ import Contact from './page/Contact.js';
 import Nopage from './page/Nopage.js'
 import Header from './component/Header.js';
 import Footer from './component/Footer.js';
+import Singleproduct from './page/Singleproduct.js';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/singleproduct/:id' element={<Singleproduct />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         <Footer />
