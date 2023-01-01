@@ -1,4 +1,5 @@
 import React from 'react'
+import FormatPrice from './Formatprice'
 
 const Card = ({ name, price, image }) => {
     return (
@@ -8,7 +9,7 @@ const Card = ({ name, price, image }) => {
             </div>
             <div className="content">
                 <h5>{name}</h5>
-                <h5>{price}</h5>
+                <h5><FormatPrice price={price} /></h5>
             </div>
         </div>
     )

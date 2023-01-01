@@ -612,6 +612,10 @@ body {
   margin-top: 20px;
 }
 
+.productdata a:link {
+  text-decoration: none;
+}
+
 .featureproduct .featureheading {
   font-size: 30px;
   font-weight: bold;
@@ -651,14 +655,133 @@ body {
   font-weight: bold;
 }
 
-@media(max-width:576px){
-  .featureproduct{
+@media(max-width:576px) {
+  .featureproduct {
     margin: 20px 0;
   }
-  .featureheading{
+
+  .featureheading {
     font-size: 25px !important;
   }
-  .productdata .card{
+
+  .productdata .card {
     margin: 10px auto;
   }
+}
+
+/* productimage section */
+.singleproduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.singleproduct .image,
+.singleproduct .content {
+  width: 50%;
+}
+
+.singleproduct .content {
+  padding: 20px !important;
+}
+
+.productimage {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productimage .imagegroup {
+  width: 220px !important;
+}
+
+.imagegroup .image {
+  width: 100%;
+  height: 150px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.imagegroup .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.productimage .mainimage {
+  width: 350px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.productimage .mainimage img {
+  width: 100%;
+  height: 250px;
+}
+
+.singleproduct .content {
+  padding: 50px 0;
+}
+
+.singleproduct .processship {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleproduct .processship .processbox {
+  width: 25%;
+  border-radius: 50%;
+}
+
+.singleproduct .processship .processbox div {
+  width: 50px;
+  height: 50px;
+  background-color: #f3f3f3;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleproduct .processship .processbox .icons {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.processship p {
+  margin: 0;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+}
+
+.singleproduct hr {
+  border: 1px solid black;
+  background-color: #1d1d1d;
+}
+
+.singleproduct h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.singleproduct h5 {
+  font-size: 18px;
+}
+
+.singleproduct span {
+  font-weight: bold;
+}
+
+.navigation {
+  font-weight: bold;
+}
+
+.navigation a:link {
+  text-decoration: none;
 }
