@@ -6,6 +6,7 @@ import { MdSecurity } from 'react-icons/md'
 import { UseGlobalContext } from '../context/Productcontext';
 import FormatPrice from '../component/Formatprice';
 import Pagenavigation from '../component/Pagenavigation';
+import Star from '../component/Star';
 
 const Singleproduct = () => {
     const { id } = useParams();
@@ -24,6 +25,8 @@ const Singleproduct = () => {
                 </div>
                 <div className="content">
                     <h1>{name}</h1>
+                    <h5>MRP: <span><del><FormatPrice price={price + 250000} /></del></span></h5>
+                    <Star stars={stars} reviews={reviews} />
                     <h5>Deals of The Day: <span><FormatPrice price={price} /></span></h5>
                     <p>{description}</p>
                     <div className="processship">

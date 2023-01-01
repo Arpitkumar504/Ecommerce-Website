@@ -785,3 +785,13 @@ body {
 .navigation a:link {
   text-decoration: none;
 }
+
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviews .icon {
+  font-size: 25px;
+}
