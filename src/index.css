@@ -795,3 +795,78 @@ body {
 .reviews .icon {
   font-size: 25px;
 }
+
+.addcartbutton {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.addcartbutton button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.cartbtn:hover {
+  opacity: 1 !important;
+}
+
+.cartbtn.active {
+  opacity: 1;
+}
+
+.addcartbutton .icon {
+  padding: 0;
+  margin: 0;
+  color: maroon;
+}
+
+.addcartbutton h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.amount h5 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.amount button {
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+}
+
+
+.addtocart .addtocartbtn {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #1d1d1d;
+  color: #f3f3f3;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.addtocart .addtocartbtn:hover {
+  background-color: #f3f3f3;
+  color: #1d1d1d;
+}

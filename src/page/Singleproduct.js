@@ -7,6 +7,7 @@ import { UseGlobalContext } from '../context/Productcontext';
 import FormatPrice from '../component/Formatprice';
 import Pagenavigation from '../component/Pagenavigation';
 import Star from '../component/Star';
+import Addtocart from '../component/Addtocart';
 
 const Singleproduct = () => {
     const { id } = useParams();
@@ -59,6 +60,8 @@ const Singleproduct = () => {
                     <h5>Avaliable: <span>{stock > 0 ? "In Stock" : "Out of Stock"}</span></h5>
                     <h5>Product Id: <span>{ids}</span></h5>
                     <h5>Brand: <span>{company}</span></h5>
+                    <hr />
+                    {stock > 0 && <Addtocart product={singleproduct} />}
                 </div>
             </div>
         </div>
