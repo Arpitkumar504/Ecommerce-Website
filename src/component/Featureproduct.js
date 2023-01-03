@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { UseGlobalContext } from '../context/Productcontext'
 import Card from './Card';
 
@@ -13,14 +12,13 @@ const Featureproduct = () => {
                     featureproducts.map((element) => {
                         const { name, price, image, id } = element;
                         return (
-                            <Link to={`/singleproduct/${id}`} key={id}>
-                                <Card
-                                    key={id}
-                                    name={name}
-                                    price={price}
-                                    image={image}
-                                />
-                            </Link>
+                            <Card
+                                key={id}
+                                id={id}
+                                name={name}
+                                price={price}
+                                image={image}
+                            />
                         )
                     })
                 }

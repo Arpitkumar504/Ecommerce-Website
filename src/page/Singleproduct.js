@@ -16,7 +16,7 @@ const Singleproduct = () => {
     useEffect(() => {
         getsingleproducts(`${api}?id=${id}`);
     }, [id])
-    const { id: ids, name, company, price, description, category, stock, stars, reviews, image } = singleproduct;
+    const { id: ids, name, company, price, description, stock, stars, reviews, image } = singleproduct;
     return (
         <div>
             <Pagenavigation title={name} />

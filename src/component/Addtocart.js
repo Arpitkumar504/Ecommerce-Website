@@ -24,8 +24,8 @@ const Addtocart = ({ product }) => {
                                 key={index}
                                 style={{ backgroundColor: element }}
                                 onClick={(e) => { setcolor(element) }}
-                                className={color == element ? "cartbtn active" : "cartbtn"}>
-                                {color == element ? <FaCheck className='icon' /> : null}
+                                className={color === element ? "cartbtn active" : "cartbtn"}>
+                                {color === element ? <FaCheck className='icon' /> : null}
                             </button>
                         )
                     })
