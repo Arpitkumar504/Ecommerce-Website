@@ -6,7 +6,8 @@ const filtercontext = createContext();
 const intialstate = {
     filterproducts: [],
     allproducts: [],
-    gridview: false,
+    gridview: true,
+    sortingvalue: "lowest",
 }
 const FilterContextProvider = ({ children }) => {
     const { products } = UseGlobalContext();
@@ -35,8 +36,24 @@ const FilterContextProvider = ({ children }) => {
         )
     }
 
+    const sorting = (value) => {
+        return (
+            dispatch({
+                type: "setsorting",
+                payload: value,
+            })
+        )
+    }
+
+    useEffect(() => {
+        dispatch({
+            type: "sortingproducts",
+            payload: products,
+        })
+    }, [state.sortingvalue])
+
     return (
-        <filtercontext.Provider value={{ ...state, setgrid, setlist }}>
+        <filtercontext.Provider value={{ ...state, setgrid, setlist, sorting }}>
             {children}
         </filtercontext.Provider>
     )

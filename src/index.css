@@ -997,9 +997,10 @@ body {
 }
 
 .product .productsort {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 5px 10px;
 }
 
@@ -1025,4 +1026,23 @@ body {
 .product .productsort .active {
   background-color: #1d1d1d;
   color: #f3f3f3;
+}
+
+.product .productsort h5 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.product .selectitem {
+  padding: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.product .selectitem option {
+  font-size: 16px;
+  font-weight: bold;
 }
