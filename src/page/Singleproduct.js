@@ -29,7 +29,7 @@ const Singleproduct = () => {
                     <h5>MRP: <span><del><FormatPrice price={price + 250000} /></del></span></h5>
                     <Star stars={stars} reviews={reviews} />
                     <h5>Deals of The Day: <span><FormatPrice price={price} /></span></h5>
-                    <p>{description}</p>
+                    <p className='des'>{description}</p>
                     <div className="processship">
                         <div className='processbox'>
                             <div>
