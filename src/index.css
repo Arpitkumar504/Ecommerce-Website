@@ -929,7 +929,7 @@ body {
 }
 
 .product .productfilter {
-  width: 30%;
+  width: 30% !important;
 }
 
 .product .products {
@@ -939,7 +939,7 @@ body {
 .product .productgrid {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -1045,4 +1045,26 @@ body {
 .product .selectitem option {
   font-size: 16px;
   font-weight: bold;
+}
+
+.product .productfilter {
+  padding: 0 10px;
+}
+
+.product .productfilter .filterproduct .search {
+  width: 100%;
+  padding: 10px;
+}
+
+.product .productfilter input {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 2px;
+  outline: none;
+  border: 2px solid black;
+}
+
+.product .productfilter .filterproduct input::placeholder {
+  font-weight: bold;
+  color: black;
 }

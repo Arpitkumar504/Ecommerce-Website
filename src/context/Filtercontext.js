@@ -8,6 +8,9 @@ const intialstate = {
     allproducts: [],
     gridview: true,
     sortingvalue: "lowest",
+    filter: {
+        text: "",
+    },
 }
 const FilterContextProvider = ({ children }) => {
     const { products } = UseGlobalContext();
@@ -45,15 +48,31 @@ const FilterContextProvider = ({ children }) => {
         )
     }
 
+    const updatefiltervalue = (event) => {
+        const { name, value } = event;
+        dispatch({
+            type: "updatefilter",
+            payload: {
+                names: name,
+                values: value,
+            }
+        })
+    }
+
     useEffect(() => {
         dispatch({
             type: "sortingproducts",
-            payload: products,
         })
     }, [state.sortingvalue])
 
+    useEffect(() => {
+        dispatch({
+            type: "filterproducts",
+        })
+    }, [state.filter])
+
     return (
-        <filtercontext.Provider value={{ ...state, setgrid, setlist, sorting }}>
+        <filtercontext.Provider value={{ ...state, setgrid, setlist, sorting, updatefiltervalue }}>
             {children}
         </filtercontext.Provider>
     )

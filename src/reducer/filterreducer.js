@@ -4,7 +4,7 @@ const filterreducer = (state, action) => {
             return {
                 ...state,
                 filterproducts: [...action.payload],
-                allprouducts: action.payload,
+                allprouducts: [...action.payload],
             };
         }
         case "setgridview": {
@@ -27,7 +27,7 @@ const filterreducer = (state, action) => {
         }
         case "sortingproducts": {
             let newdata;
-            let temp = [...action.payload];
+            let temp = [...state.filterproducts];
             if (state.sortingvalue === "a-z") {
                 newdata = temp.sort((a, b) =>
                     a.name.localeCompare(b.name)
@@ -51,6 +51,30 @@ const filterreducer = (state, action) => {
             return {
                 ...state,
                 filterproducts: newdata,
+            }
+        }
+        case "updatefilter": {
+            const { names, values } = action.payload;
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    [names]: [values],
+                },
+            }
+        }
+        case "filterproducts": {
+            // let { allproducts } = state;
+            let tempfilter = [...state.allprouducts];
+            const { text } = state.filter;
+            if (text) {
+                tempfilter = tempfilter.filter((element) => {
+                    return element.name.toLowerCase().includes(text);
+                });
+            }
+            return {
+                ...state,
+                filterproducts: tempfilter,
             }
         }
         default:
