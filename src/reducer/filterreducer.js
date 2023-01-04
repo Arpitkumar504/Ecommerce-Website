@@ -4,7 +4,7 @@ const filterreducer = (state, action) => {
             return {
                 ...state,
                 filterproducts: [...action.payload],
-                allprouducts: [...action.payload],
+                allproducts: [...action.payload],
             };
         }
         case "setgridview": {
@@ -65,12 +65,15 @@ const filterreducer = (state, action) => {
         }
         case "filterproducts": {
             // let { allproducts } = state;
-            let tempfilter = [...state.allprouducts];
-            const { text } = state.filter;
+            let tempfilter = [...state.allproducts];
+            const { text, category } = state.filter;
             if (text) {
                 tempfilter = tempfilter.filter((element) => {
                     return element.name.toLowerCase().includes(text);
                 });
+            }
+            if (category != "all") {
+                tempfilter = tempfilter.filter(element => element.category == category);
             }
             return {
                 ...state,
