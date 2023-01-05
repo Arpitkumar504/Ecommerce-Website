@@ -13,6 +13,9 @@ const intialstate = {
         category: "all",
         company: "all",
         color: "all",
+        maxprice: 0,
+        minprice: 0,
+        price: 0,
     },
 }
 const FilterContextProvider = ({ children }) => {
@@ -62,6 +65,12 @@ const FilterContextProvider = ({ children }) => {
         })
     }
 
+    const clearfilter = () => {
+        dispatch({
+            type: "filterclear",
+        })
+    }
+
     useEffect(() => {
         dispatch({
             type: "sortingproducts",
@@ -75,7 +84,7 @@ const FilterContextProvider = ({ children }) => {
     }, [state.filter])
 
     return (
-        <filtercontext.Provider value={{ ...state, setgrid, setlist, sorting, updatefiltervalue }}>
+        <filtercontext.Provider value={{ ...state, setgrid, setlist, sorting, updatefiltervalue, clearfilter }}>
             {children}
         </filtercontext.Provider>
     )

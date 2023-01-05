@@ -1,10 +1,19 @@
 const filterreducer = (state, action) => {
     switch (action.type) {
         case "loadfilterproduct": {
+            let priceall = action.payload.map(element => {
+                return element.price;
+            })
+            let maximumprice = Math.max.apply(null, priceall);
             return {
                 ...state,
                 filterproducts: [...action.payload],
                 allproducts: [...action.payload],
+                filter: {
+                    ...state.filter,
+                    maxprice: maximumprice,
+                    price: maximumprice,
+                }
             };
         }
         case "setgridview": {
@@ -66,7 +75,7 @@ const filterreducer = (state, action) => {
         case "filterproducts": {
             // let { allproducts } = state;
             let tempfilter = [...state.allproducts];
-            const { text, category, company, color } = state.filter;
+            const { text, category, company, color, price } = state.filter;
             if (text) {
                 tempfilter = tempfilter.filter((element) => {
                     return element.name.toLowerCase().includes(text);
@@ -85,9 +94,34 @@ const filterreducer = (state, action) => {
                     return element.colors.includes(color[0]);
                 })
             }
+            if (price == 0) {
+                tempfilter = tempfilter.filter(element => {
+                    return element.price == price;
+                })
+            }
+            else {
+                tempfilter = tempfilter.filter(element => {
+                    return element.price <= price;
+                })
+            }
             return {
                 ...state,
                 filterproducts: tempfilter,
+            }
+        }
+        case "filterclear": {
+            return {
+                ...state,
+                filter: {
+                    ...state.filter,
+                    text: "",
+                    category: "all",
+                    company: "all",
+                    color: "all",
+                    maxprice: state.filter.maxprice,
+                    price: state.filter.maxprice,
+                    minprice: state.filter.minprice,
+                }
             }
         }
         default:
