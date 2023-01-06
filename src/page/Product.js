@@ -10,7 +10,7 @@ const Product = () => {
                 <Filterproduct />
             </div>
             <div className="products">
-                <div className="productsort">
+                <div className="productsort sort">
                     <SortProduct />
                 </div>
                 <div className="productdata">
