@@ -947,6 +947,17 @@ body {
   margin: 20px 0;
 }
 
+.product .noproduct {
+  width: 100%;
+}
+
+.product .noproduct h5 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 200px 0;
+}
+
 .product .prouductlist {
   width: 100%;
   padding: 10px;
