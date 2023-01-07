@@ -9,6 +9,7 @@ import Header from './component/Header.js';
 import Footer from './component/Footer.js';
 import Singleproduct from './page/Singleproduct.js';
 import Product from './page/Product.js';
+import Cart from './page/Cart.js';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/product' element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/singleproduct/:id' element={<Singleproduct />} />
           <Route path="*" element={<Nopage />} />
         </Routes>

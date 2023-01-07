@@ -1321,3 +1321,97 @@ body {
     height: 100px;
   }
 }
+
+/* cart section */
+.cart {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.cart .cartdata {
+  width: 100%;
+}
+
+.cart .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart .heading h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart hr {
+  border: 1px solid black;
+  background-color: #1d1d1d;
+}
+
+.cart .cartcard {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart .cartcard div {
+  width: 200px;
+}
+
+.cart .cartitem .image {
+  width: 80px;
+}
+
+.cart .cartitem img {
+  width: 100%;
+  height: 50px;
+}
+
+.cart .cartitem {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart .cartitem .content {
+  padding-left: 10px;
+}
+
+.cart .cartitem p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.cart .cartitem button {
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart .cartprice h5 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cart .cartsubtotal h5 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cart .cartremove {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cart .cartremove .icon {
+  font-size: 20px;
+  cursor: pointer;
+}
