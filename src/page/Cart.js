@@ -1,11 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Cartcard from '../component/Cartcard';
+import FormatPrice from '../component/Formatprice';
 import { useCartContext } from '../context/Cardcontext'
 
 const Cart = () => {
-    const { cart, clearcart } = useCartContext();
-    if (cart.length == 0) {
+    const { cart, clearcart, totalamount, shippingfee } = useCartContext();
+
+    if (cart.length === 0) {
         return (
             <div className="emptycart">
                 <h5>Cart is Empty</h5>
@@ -34,11 +36,20 @@ const Cart = () => {
                     })
                 }
             </div>
+            <hr />
             <div className="cartshopping">
                 <Link to="/product">
                     <button type='button' >Continue Shopping</button>
                 </Link>
                 <button type='button' onClick={() => { clearcart() }}>Clear Cart</button>
+            </div>
+            <div className="carttotal">
+                <div className='carttotalcontent'>
+                    <h5>Subtotal: <FormatPrice price={totalamount} /></h5>
+                    <h5>Shipping Fee: <FormatPrice price={shippingfee} /></h5>
+                    <hr />
+                    <h5>Order Total: <FormatPrice price={totalamount + shippingfee} /></h5>
+                </div>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { GrClose } from 'react-icons/gr'
 import { FaShoppingCart } from 'react-icons/fa'
@@ -31,10 +31,12 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="cart">
-                    <Link to="/cart"><FaShoppingCart className="icon" /></Link>
-                    <span>{totalitem}</span>
-                </div>
+                <Link to="/cart">
+                    <div className="cart">
+                        <FaShoppingCart className="icon" />
+                        <span>{totalitem}</span>
+                    </div>
+                </Link>
             </div>
             <div className="navbutton" onClick={() => { setshow(!show) }}>
                 <AiOutlineMenu className='open navbtn' />

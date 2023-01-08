@@ -75,6 +75,10 @@ body {
   padding: 1px;
 }
 
+.header .navbarcart span {
+  color: black;
+}
+
 .header .navbar {
   padding: 0;
   margin-right: 50px;
@@ -1451,7 +1455,7 @@ body {
 }
 
 .cart .cartremove .icon {
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -1489,4 +1493,126 @@ body {
   font-weight: bold;
   margin: 0;
   text-align: center;
+}
+
+.cart .carttotal {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cart .carttotal .carttotalcontent {
+  width: 300px;
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart .carttotal hr {
+  margin: 10px 0;
+}
+
+.cart .carttotal h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+@media(max-width:768px) {
+  .cart .cartcard {
+    padding: 0;
+  }
+
+  .cart .heading h5 {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .cart hr {
+    margin: 10px 0;
+  }
+
+  .cart .cartcard .cartquantity {
+    width: 150px !important;
+  }
+
+  .cart .cartcard .image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cart .cartcard .image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cart .cartcard .amount {
+    width: 80px !important;
+    height: 100%;
+    margin: 0;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .amount button {
+    width: 30px !important;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .amount h5 {
+    font-size: 18px;
+  }
+
+  .cart .amount button .icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cart .cartcard .content {
+    padding: 2px;
+    width: 80px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cart .cartcard .content p {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .cart .cartcard .cartprice {
+    display: none;
+  }
+
+  .cart .cartcard .cartsubtotal h5 {
+    font-size: 18px;
+  }
+
+  .cart .cartcard .cartremove {
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart .cartshopping button {
+    padding: 10px 10px;
+  }
+
+  .cart .carttotal .carttotalcontent {
+    width: 250px;
+    padding: 10px;
+  }
+
+  .cart .carttotal h5 {
+    font-size: 15px;
+  }
 }

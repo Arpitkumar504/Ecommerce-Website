@@ -68,6 +68,9 @@ const CartContextProvider = ({ children }) => {
         dispatch({
             type: "carttotalitem",
         })
+        dispatch({
+            type: "carttotalprice",
+        })
         localStorage.setItem("cartdata", JSON.stringify(state.cart));
     }, [state.cart])
 
