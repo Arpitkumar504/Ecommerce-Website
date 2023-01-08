@@ -1,9 +1,17 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import Cartcard from '../component/Cartcard';
 import { useCartContext } from '../context/Cardcontext'
 
 const Cart = () => {
-    const { cart } = useCartContext();
+    const { cart, clearcart } = useCartContext();
+    if (cart.length == 0) {
+        return (
+            <div className="emptycart">
+                <h5>Cart is Empty</h5>
+            </div>
+        )
+    }
     return (
         <div className='container cart'>
             <div className="heading">
@@ -25,6 +33,12 @@ const Cart = () => {
                         )
                     })
                 }
+            </div>
+            <div className="cartshopping">
+                <Link to="/">
+                    <button type='button'>Continue Shopping</button>
+                </Link>
+                <button type='button' onClick={() => { clearcart() }}>Clear Cart</button>
             </div>
         </div>
     )
