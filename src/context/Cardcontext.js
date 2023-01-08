@@ -47,12 +47,29 @@ const CartContextProvider = ({ children }) => {
         )
     }
 
+    const setDecrease = (id) => {
+        return (
+            dispatch({
+                type: "decrease",
+                payload: id,
+            })
+        )
+    }
+
+    const setIncrease = (id) => {
+        return (
+            dispatch({
+                type: "increase",
+                payload: id,
+            })
+        )
+    }
     useEffect(() => {
         localStorage.setItem("cartdata", JSON.stringify(state.cart));
     }, [state.cart])
 
     return (
-        <cartcontext.Provider value={{ ...state, addtocart, removeitem, clearcart }}>
+        <cartcontext.Provider value={{ ...state, addtocart, removeitem, clearcart, setDecrease, setIncrease }}>
             {children}
         </cartcontext.Provider>
     )

@@ -52,6 +52,48 @@ const cartreducer = (state, action) => {
                 cart: data,
             }
         }
+        case "increase": {
+            let updatedproduct = state.cart.map(element => {
+                if (element.id == action.payload) {
+                    let incamount = element.amount + 1;
+                    if (incamount >= element.max) {
+                        incamount = element.max;
+                    }
+                    return {
+                        ...element,
+                        amount: incamount,
+                    }
+                }
+                else {
+                    return element;
+                }
+            })
+            return {
+                ...state,
+                cart: updatedproduct,
+            }
+        }
+        case "decrease": {
+            let updatedproduct = state.cart.map(element => {
+                if (element.id == action.payload) {
+                    let decamount = element.amount - 1;
+                    if (decamount<=1) {
+                        decamount = 1;
+                    }
+                    return {
+                        ...element,
+                        amount: decamount,
+                    }
+                }
+                else {
+                    return element;
+                }
+            })
+            return {
+                ...state,
+                cart: updatedproduct,
+            }
+        }
         case "cartclear": {
             return {
                 ...state,

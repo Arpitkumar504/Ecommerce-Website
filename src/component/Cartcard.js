@@ -5,13 +5,7 @@ import Cardamount from './Cardamount'
 import FormatPrice from './Formatprice'
 
 const Cartcard = ({ id, color, amount, image, max, name, price }) => {
-    const { removeitem } = useCartContext();
-    const setincrease = () => {
-
-    }
-    const setdecrease = () => {
-
-    }
+    const { removeitem, setDecrease, setIncrease } = useCartContext();
     return (
         <div className="cartcard container">
             <div className="cartitem">
@@ -29,8 +23,8 @@ const Cartcard = ({ id, color, amount, image, max, name, price }) => {
             <div className="cartquantity">
                 <Cardamount
                     amount={amount}
-                    setdecrease={setdecrease}
-                    setincrease={setincrease}
+                    setdecrease={() => { setDecrease(id) }}
+                    setincrease={() => { setIncrease(id) }}
                 />
             </div>
             <div className="cartsubtotal">
