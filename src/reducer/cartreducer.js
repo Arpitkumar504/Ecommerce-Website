@@ -77,7 +77,7 @@ const cartreducer = (state, action) => {
             let updatedproduct = state.cart.map(element => {
                 if (element.id == action.payload) {
                     let decamount = element.amount - 1;
-                    if (decamount<=1) {
+                    if (decamount <= 1) {
                         decamount = 1;
                     }
                     return {
@@ -99,6 +99,17 @@ const cartreducer = (state, action) => {
                 ...state,
                 cart: [],
             }
+        }
+        case "carttotalitem": {
+            let updateditem = state.cart.reduce((initialVal, element) => {
+                let { amount } = element;
+                initialVal = initialVal + amount;
+                return initialVal;
+            }, 0);
+            return {
+                ...state,
+                totalitem: updateditem,
+            };
         }
         default:
             return state;
