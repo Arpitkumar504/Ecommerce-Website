@@ -1627,4 +1627,16 @@ body {
   .cart .carttotal h5 {
     font-size: 15px;
   }
+
+  .cart .cartitem {
+    width: 120px !important;
+  }
+
+  .cart .heading h5:nth-child(2) {
+    display: none;
+  }
+
+  .cart .heading h5:nth-child(1) {
+    width: 100px;
+  }
 }
