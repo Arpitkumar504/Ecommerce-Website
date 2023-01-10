@@ -1,22 +1,25 @@
 import React from 'react'
 import { AiFillDelete } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/Cardcontext'
 import Cardamount from './Cardamount'
 import FormatPrice from './Formatprice'
 
-const Cartcard = ({ id, color, amount, image, max, name, price }) => {
+const Cartcard = ({ id, color, amount, image, max, name, price, singleid }) => {
     const { removeitem, setDecrease, setIncrease } = useCartContext();
     return (
         <div className="cartcard container">
-            <div className="cartitem">
-                <div className="image">
-                    <img src={image} alt="#" />
+            <Link to={`/singleproduct/${singleid}`}>
+                <div className="cartitem">
+                    <div className="image">
+                        <img src={image} alt="#" />
+                    </div>
+                    <div className="content">
+                        <p>{name}</p>
+                        <button type='button' style={{ backgroundColor: color }}></button>
+                    </div>
                 </div>
-                <div className="content">
-                    <p>{name}</p>
-                    <button type='button' style={{ backgroundColor: color }}></button>
-                </div>
-            </div>
+            </Link>
             <div className="cartprice">
                 <h5><FormatPrice price={price} /></h5>
             </div>

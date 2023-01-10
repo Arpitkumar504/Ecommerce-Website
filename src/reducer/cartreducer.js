@@ -35,6 +35,7 @@ const cartreducer = (state, action) => {
                     max: product.stock,
                     name: product.name,
                     price: product.price,
+                    singleid: product.id,
                 }
                 return {
                     ...state,

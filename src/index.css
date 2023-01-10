@@ -1519,6 +1519,18 @@ body {
   margin: 10px 0;
 }
 
+.cart a:link {
+  text-decoration: none;
+}
+
+.cart a {
+  color: black;
+}
+
+.cart:hover a {
+  color: black;
+}
+
 @media(max-width:768px) {
   .cart .cartcard {
     padding: 0;
